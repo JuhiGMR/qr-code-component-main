@@ -1,28 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | QR code component</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    /* ===== RESET ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* ===== BODY ===== */
+    body {
+      font-family: "Outfit", sans-serif;
+      background: linear-gradient(135deg, hsl(210, 100%, 98%), hsl(220, 80%, 94%));
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 2rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* ===== DECORATIVE CIRCLES ===== */
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.25;
+      filter: blur(60px);
+      z-index: -1;
+    }
+
+    /* ===== CARD ===== */
+    .qr-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      padding: 2rem 1.5rem;
+      max-width: 340px;
+      width: 100%;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .qr-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ===== LOGO ===== */
+    .logo {
+      width: 80px;
+      height: auto;
+      margin: 0 auto 1.25rem;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .qr-card:hover .logo {
+      transform: scale(1.05);
+    }
+
+    /* ===== MAIN IMAGE (QR / Poster) ===== */
+    .main-image {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .qr-card:hover .main-image {
+      transform: scale(1.02);
+    }
+
+    /* ===== TEXT ===== */
+    h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: hsl(218, 44%, 22%);
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+
+    p {
+      font-size: 0.9375rem;
+      font-weight: 400;
+      color: hsl(220, 15%, 45%);
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ===== ATTRIBUTION ===== */
+    .attribution {
+      font-size: 0.75rem;
+      text-align: center;
+      color: hsl(220, 10%, 50%);
+      margin-top: 1.5rem;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .attribution a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 400px) {
+      .qr-card {
+        padding: 1.5rem 1.25rem;
+      }
+
+      h1 {
+        font-size: 1.1rem;
+      }
+
+      p {
+        font-size: 0.875rem;
+      }
+
+      .logo {
+        width: 70px;
+      }
+    }
+
+    /* .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); } */
   </style>
 </head>
+
 <body>
+  <!-- Card -->
+  <div class="qr-card">
+    <img src="./images/image-qr-code.png" alt="QR Code or Poster" class="main-image" />
+    <h1>Improve your front-end skills by building projects</h1>
+    <p>Scan the QR code to visit Frontend Mentor and take your coding skills to the next level.</p>
+  </div>
 
-  Improve your front-end skills by building projects
-
-  Scan the QR code to visit Frontend Mentor and take your coding skills to the next level
-  
+  <!-- Attribution -->
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Challenge by <a href="https://www.frontendmentor.io" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://www.instagram.com/sassy_artworks/">Juhi Afreen</a>.
   </div>
 </body>
+
 </html>
